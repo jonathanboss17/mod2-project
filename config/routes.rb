@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   delete '/login', to: 'auth#destroy'
 
   resources :main, only: [:index]
-  resources :destinations, :itineraries, :users
+  resources :destinations, only: [:index, :show]
+  resources :itineraries
+  resources :users, only: [:show, :new, :create, :edit, :update, :destroy]
 
 end

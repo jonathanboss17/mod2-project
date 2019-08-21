@@ -8,7 +8,7 @@ class AuthController < ApplicationController
             session[:user_id] = @person.id
             redirect_to main_index_path
         else
-            # flash[:notice] = "Incorrect username or password."
+            flash[:notice] = "Incorrect username or password."
             render :new
         end
     end
