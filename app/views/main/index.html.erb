@@ -85,10 +85,6 @@
     }
   </style>
 
-  <script src="assets/library/jquery.min.js"></script>
-  <script src="../dist/components/visibility.js"></script>
-  <script src="../dist/components/sidebar.js"></script>
-  <script src="../dist/components/transition.js"></script>
   <script>
   $(document)
     .ready(function() {
@@ -112,6 +108,7 @@
   ;
   </script>
 </head>
+
 <body>
 
 
@@ -127,9 +124,15 @@
       <a class="item">Home</a>
       <a class="item">Itineraries</a>
       <a class="item">Favorites</a>
-      <div class="right item">
-        <%= button_to "Log In", {action: "new", controller: "auth"}, {class: 'ui basic inverted button'} %>
-      </div>
+      <% if current_user %>
+        <div class="right item">
+          <%= button_to "Log Out", {action: "destroy", controller: "auth"}, {class: 'ui basic inverted button', method: :delete} %>
+        </div>
+      <% else %> 
+        <div class="right item">
+          <%= button_to "Log In", {action: "new", controller: "auth"}, {class: 'ui basic inverted button', method: :get} %>
+        </div>
+      <% end %> 
     </div>
   </div>
 

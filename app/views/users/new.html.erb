@@ -1,6 +1,6 @@
 
 
-<%= form_for(@user, url: new_user_path, html: {class: "ui form"}) do |f| %>
+<%= form_for(@user, html: {class: "ui form"}) do |f| %>
 
     <h3 class="ui block header">Information</h3>
 
@@ -60,6 +60,6 @@
                 </div>
         </div>
 
-    <%= f.submit "Save", class: 'ui blue submit button' %>
+    <%= f.submit "Save", class: 'ui blue button' %>
 
 <% end %>

@@ -154,45 +154,5 @@ QUESTIONS
 
 
 
-
-
-    <div class="ui middle aligned center aligned grid">
-      <div class="column">
-        <h2 class="ui blue image header">
-          <div class="content">
-            Log-in to your account
-          </div>
-        </h2>
       
-        <% if(@error) %>
-          <div class="ui error message">
-            <div class="header">
-              <%= @error %>
-            </div>
-          </div>
-        <% end %>
-
-      <%= form_for(:session, url: login_path, html: {class: "ui form"}) do |f| %>
-        <div class="ui stacked segment">
-          <div class="field">
-            <div class="ui left icon input">
-              <i class="user icon"></i>
-              <%= f.text_field :username, placeholder: "username" %>
-            </div>
-          </div>
-          <div class="field">
-            <div class="ui left icon input">
-              <i class="lock icon"></i>
-              <%= f.password_field :password, placeholder: "password" %>
-            </div>
-          </div>
-          <div><%= f.submit "Log In", class: 'ui fluid large blue submit button' %></div>
-        </div>
-      <% end %>
-
-        <div class="ui message">
-          New to us? <%= link_to("Sign Up", new_user_path(@user)) %>
-        </div>
-
-    </div>
-    </div>
+       

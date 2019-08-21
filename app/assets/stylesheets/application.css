@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+ #signup_message {
+     display: flex; 
+     justify-content: space-between; 
+     align-items: center; 
+
+     padding: 0em, 2em; 
+ }
+
+ #signup_link {
+     font-size: medium;
+ }

@@ -1,5 +1,4 @@
 class UsersController < ApplicationController 
-    # before_action :authorize!, except: [:show]
 
 
     def show
@@ -14,7 +13,7 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if(@user.save)
-            redirect_to user_path(@user)
+            redirect_to main_index_path
         else
             render :new
         end
@@ -32,6 +31,6 @@ class UsersController < ApplicationController
     private 
 
     def user_params(*args)
-        params.require(:user).permit(:first_name, :last_name, :username, :location, :gender, :bio, :password_digest)
+        params.require(:user).permit(:first_name, :last_name, :username, :location, :gender, :bio, :password)
     end
 end
