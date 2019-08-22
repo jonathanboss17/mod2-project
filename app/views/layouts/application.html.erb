@@ -8,10 +8,159 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
+    <style type="text/css">
+
+    .masthead {
+      background-image: url("https://i.imgur.com/vPZ4OCW.jpg") !important;
+      background-size: cover !important;
+      }
+
+
+    .hidden.menu {
+      display: none;
+    }
+    .masthead.segment {
+      min-height: 700px;
+      padding: 1em 0em;
+    }
+    .masthead .logo.item img {
+      margin-right: 1em;
+    }
+    .masthead .ui.menu .ui.button {
+      margin-left: 0.5em;
+    }
+    .masthead h1.ui.header {
+      margin-top: 3em;
+      margin-bottom: 0em;
+      font-size: 4em;
+      font-weight: normal;
+    }
+    .masthead h2 {
+      font-size: 1.7em;
+      font-weight: normal;
+    }
+    .ui.vertical.stripe {
+      padding: 8em 0em;
+    }
+    .ui.vertical.stripe h3 {
+      font-size: 2em;
+    }
+    .ui.vertical.stripe .button + h3,
+    .ui.vertical.stripe p + h3 {
+      margin-top: 3em;
+    }
+    .ui.vertical.stripe .floated.image {
+      clear: both;
+    }
+    .ui.vertical.stripe p {
+      font-size: 1.33em;
+    }
+    .ui.vertical.stripe .horizontal.divider {
+      margin: 3em 0em;
+    }
+    .quote.stripe.segment {
+      padding: 0em;
+    }
+    .quote.stripe.segment .grid .column {
+      padding-top: 5em;
+      padding-bottom: 5em;
+    }
+    .footer.segment {
+      padding: 5em 0em;
+    }
+    .secondary.pointing.menu .toc.item {
+      display: none;
+    }
+    @media only screen and (max-width: 700px) {
+      .ui.fixed.menu {
+        display: none !important;
+      }
+      .secondary.pointing.menu .item,
+      .secondary.pointing.menu .menu {
+        display: none;
+      }
+      .secondary.pointing.menu .toc.item {
+        display: block;
+      }
+      .masthead.segment {
+        min-height: 350px;
+      }
+      .masthead h1.ui.header {
+        font-size: 2em;
+        margin-top: 1.5em;
+      }
+      .masthead h2 {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+      }
+    }
+  </style>
+
+  <script>
+  $(document)
+    .ready(function() {
+      // fix menu when passed
+      $('.masthead')
+        .visibility({
+          once: false,
+          onBottomPassed: function() {
+            $('.fixed.menu').transition('fade in');
+          },
+          onBottomPassedReverse: function() {
+            $('.fixed.menu').transition('fade out');
+          }
+        })
+      ;
+      // create sidebar and attach to menu open
+      $('.ui.sidebar')
+        .sidebar('attach events', '.toc.item')
+      ;
+    })
+  ;
+  </script>
+
   </head>
 
   <body>
+ 
+    <div class="pusher">
+    <div class="ui inverted vertical masthead center aligned segment">
+    
+      <div class="ui container">
+        <div class="ui large secondary inverted menu">
+        <a class="toc item">
+        
+          <% if current_user %>
+            <i class="user icon"></i>
+              <%= button_to "", {action: "show", id: session[:user_id], controller: "users"}, {class: 'item', method: :get} %>
+            </a>
+          <% end %>
+    
+          <a class="item">
+            <%= button_to "Home", {action: "index", controller: "main"}, {class: 'item', method: :get} %>
+          </a>
+    
+          <% if current_user %>
+          <a class="item">
+            <%= button_to "Itineraries", {action: "user_itineraries", id: session[:user_id], controller: "users"}, {class: 'item', method: :get} %>
+          </a>
+          <a class="item">
+            <%= button_to "Favorites", {action: "user_favorites", id: session[:user_id], controller: "users"}, {class: 'item', method: :get} %>
+          </a>
+            <a class="item" id="welcome_back"> Welcome <%= current_user.first_name %>!</a>
+            <div class="right item">
+              <%= button_to "Log Out", {action: "destroy", controller: "auth"}, {class: 'ui basic inverted button', method: :delete} %>
+            </div>
+          <% else %> 
+            <div class="right item">
+              <%= button_to "Log In", {action: "new", controller: "auth"}, {class: 'ui basic inverted button', method: :get} %>
+            </div>
+          <% end %> 
+        </div>
+      </div>
 
-    <%= yield %>
+      <%= yield %> 
+    </div>
+    </div>
   </body>
 </html>

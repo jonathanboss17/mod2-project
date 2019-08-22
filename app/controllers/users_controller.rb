@@ -28,6 +28,14 @@ class UsersController < ApplicationController
     def destroy
     end
 
+    def user_itineraries
+        @user = User.find(params[:id])
+    end
+
+    def user_favorites
+        @user = User.find(params[:id])
+    end
+
     private 
 
     def user_params(*args)

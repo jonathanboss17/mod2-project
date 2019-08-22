@@ -122,37 +122,27 @@ QUESTIONS
 
 
 
-* it doesn't seem like i need these ... (but if I do I'll know where to find them)
-       <!-- Standard Meta -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+* Favorites --> custom route
+* Itineraries --> custom route --> 
+* Account Button --> User show page
 
-  <!-- Site Properties -->
-  <title>Login Example - Semantic</title>
-  <link rel="stylesheet" type="text/css" href="../dist/components/reset.css">
-  <link rel="stylesheet" type="text/css" href="../dist/components/site.css">
+Search Bar --> PostGres?
+- user will type in a city, state 
+- we will take input ... break it up into city and state
+- check the destinations table to see if the input matches any of the cities
+- if it does ... direct user to page of all itineraries associated with that city 
+- if it does not ... create a new destination with that input ... and then direct user to that same page
 
-  <link rel="stylesheet" type="text/css" href="../dist/components/container.css">
-  <link rel="stylesheet" type="text/css" href="../dist/components/grid.css">
-  <link rel="stylesheet" type="text/css" href="../dist/components/header.css">
-  <link rel="stylesheet" type="text/css" href="../dist/components/image.css">
-  <link rel="stylesheet" type="text/css" href="../dist/components/menu.css">
+Itinerary Show Page
+- reserved for when a User types in a city and the list of itineraries pops up with that city 
+- a User can then click on that itinerary and it will direct them to that itineraries show page 
 
-  <link rel="stylesheet" type="text/css" href="../dist/components/divider.css">
-  <link rel="stylesheet" type="text/css" href="../dist/components/segment.css">
-  <link rel="stylesheet" type="text/css" href="../dist/components/form.css">
-  <link rel="stylesheet" type="text/css" href="../dist/components/input.css">
-  <link rel="stylesheet" type="text/css" href="../dist/components/button.css">
-  <link rel="stylesheet" type="text/css" href="../dist/components/list.css">
-  <link rel="stylesheet" type="text/css" href="../dist/components/message.css">
-  <link rel="stylesheet" type="text/css" href="../dist/components/icon.css">
 
-  <script src="assets/library/jquery.min.js"></script>
-  <script src="../dist/components/form.js"></script>
-  <script src="../dist/components/transition.js"></script>
+Stuff to Fix
+- new user page ... follow new itinerary page format
+- make buttons Home and Login dissappear only when someone goes to the login page
 
+- when someone makes a new user they are redirected to the main page with the welcome message
 
 
       
-       

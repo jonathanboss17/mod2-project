@@ -5,6 +5,10 @@ class User < ApplicationRecord
     has_many :destinations, through: :itineraries 
 
     validates :username, presence: true, uniqueness: true 
-    validates :first_name, :last_name, presence: true 
+    validates :first_name, :last_name, presence: true
+    
+    def name 
+        self.first_name + " " + self.last_name
+    end
 
 end

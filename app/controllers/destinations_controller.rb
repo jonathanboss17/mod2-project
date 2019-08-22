@@ -1,2 +1,9 @@
 class DestinationsController < ApplicationController 
-end
+    def index
+        @destinations = Destination.all
+    end
+
+    def show 
+        @destination = Destination.find(params[:id]) 
+    end
+end     
