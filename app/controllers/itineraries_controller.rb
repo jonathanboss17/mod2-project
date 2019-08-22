@@ -15,8 +15,8 @@ class ItinerariesController < ApplicationController
     # still have to figure out a way to allow a user to choose a destination in new controller
     def create
         set_user_id
-        @itinerary = Itinerary.new(itinerary_params)
-        byebug
+
+        @itinerary = Itinerary.new(itinerary_params(:title, :one_day, :two_day, :three_day, :user_id, :destination_id))
         if(@itinerary.save)
             redirect_to :show
         else
@@ -40,7 +40,7 @@ class ItinerariesController < ApplicationController
     end
 
     def itinerary_params(*args)
-        params.require(:itinerary).permit(:title, :one_day, :two_day, :three_day, :user_id, :destination_id)
+        params.require(:itinerary).permit(:title, :one_day, :two_day, :three_day, :user_id, :destination_id, :method)
     end
 
 end

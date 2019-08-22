@@ -146,3 +146,4 @@ Stuff to Fix
 
 
       
+<%= f.collection_select(:destination_id, Destination.all, :id, :cities_for_state(:state), prompt: true) %>
