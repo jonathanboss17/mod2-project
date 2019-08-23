@@ -8,6 +8,6 @@
 
 CS.states(:us).each do |key, value|
     CS.cities(key, :us).each do |city|
-        Destination.create(city: city, state: value)
+        Destination.create(location: city + ", " + value)
     end
 end

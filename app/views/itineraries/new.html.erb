@@ -13,19 +13,12 @@
                 </div>
 
                 <div class="six wide field">
-                    <label>States:</label>
+                    <label>Destination:</label>
                         <div class="ui input focus">
-                            <%= f.collection_select(:method, Destination.states, :id, :state, prompt: true) %>
+                            <%= f.collection_select(:destination_id, Destination.all, :id, :location, prompt: true) %>
                         </div>
                 </div>
 
-                <div class="six wide field">
-                    <label>Cities:</label>
-                        <div class="ui input focus">
-                            <% byebug %>
-                            <%= f.collection_select(:destination_id, Destination.cities_for_state(method), :id, :city, prompt: true )%>
-                        </div>
-                </div>
             </div>
         
 

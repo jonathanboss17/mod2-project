@@ -13,7 +13,9 @@ Rails.application.routes.draw do
 
   resources :main, only: [:index]
 
-  resources :destinations, only: [:index, :show]
+  resources :destinations, only: [:show]
+
+  get '/home', to: 'destinations#index', as: :home
 
   resources :itineraries
   resources :users, only: [:show, :new, :create, :edit, :update, :destroy]

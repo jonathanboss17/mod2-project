@@ -1,1 +1,18 @@
-<h1>CHEESE</h1>
+
+
+<div class="ui text container" id="search_bar">
+
+<h1><%= form_tag(home_path, method: :get, class: 'ui header') do %>
+  <div class="ui transparent icon input">  
+    <%= search_field_tag :search, params[:search], placeholder: "Your Adventure Begins...", class: "item" %>  
+
+    <a class="transparent toc item">
+      <i class="search icon">  
+        <%= button_tag "", {class: 'transparent item'} %>  
+      </i>  
+    </a>
+
+  </div>  
+<% end %></h1>
+
+</div>

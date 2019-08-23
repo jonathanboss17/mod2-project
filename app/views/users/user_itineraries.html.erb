@@ -1,8 +1,9 @@
 <div class="ui sizer vertical segment">
 <div class="ui medium header"><%= button_to "Create Itinerary", {action: "new", controller: "itineraries"}, {class: 'ui blue inverted button', method: :get} %></div>
-<% @user.itineraries.each do |itin| %>
-    <div class="ui three stackable cards">
 
+
+<div class="ui three stackable cards">
+    <% @user.itineraries.each do |itin| %>
     <a class="ui raised card" href= "/itineraries/<%= itin.id %>">
     <div class="content">
                 <div class="header"><%= itin.title %></div><br>
@@ -48,9 +49,9 @@
         
     </a>
 
-
+    <% end %>
 </div>
-<% end %>
+
 </div>
 
 
