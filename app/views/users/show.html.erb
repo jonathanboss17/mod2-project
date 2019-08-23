@@ -1,0 +1,95 @@
+<h2 class="ui white header">Your Account</h2>
+
+<div class="ui centered grid container">
+    <div class="six wide column">
+        <div class="ui segment">
+        <table class="ui very basic collapsing celled table">
+            <thead>
+                <tr><th><%= @user.username %></th>
+                <th></th>
+            </tr></thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="content">
+                            <div class="sub header">
+                                First Name
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                    <%= @user.first_name %>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="content">
+                            <div class="sub header">
+                                Last Name
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                    <%= @user.last_name %>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="content">
+                            <div class="sub header">
+                                Location
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                    <%= @user.location %>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="content">
+                            <div class="sub header">
+                                Gender
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                    <%= @user.gender %>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="content">
+                            <div class="sub header">
+                                Bio
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                    <%= @user.bio %>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="content">
+                            <div class="sub header">
+                                Password
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                    <%= @user.password %>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+        <h2 class="ui header"><%= button_to "Edit", {action: "edit", controller: "users"}, {class: 'ui blue button', method: :get} %></h2>
+        <h2 class="ui header"><%= button_to "Delete", {action: "destroy", controller: "users"}, {class: 'ui red button', method: :delete} %></h2>
+    </div>
+</div>

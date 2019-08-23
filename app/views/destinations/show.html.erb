@@ -1,2 +1,55 @@
-<h1><%= @destination.location %></h1>
+<h2 class="ui header"><%= @destination.location %></h2>
+
+<div class="ui four stackable grid container">
+    <% @destination.itineraries.each do |itin| %>
+        <div class="four wide column">
+            <a class="ui raised card" href="/itineraries/<%= itin.id %>">
+                <div class="content">
+                    <div class="header"><%= itin.title %></div><br>
+
+                    <div class="meta">
+                        <span class="left floated category">Genre</span>
+                        <span class="right floated category"><%= @destination.location %></span>
+                    </div><br><br>
+
+                    <div class="description">
+                        <h4 class="ui left sub header">Day 1:</h4>
+                            <div class="content">
+                                <div class="summary">
+                                    <%= itin.one_day %>
+                                </div>
+                            </div>
+
+                        <h4 class="ui left sub header">Day 2:</h4>
+                            <div class="content">
+                                <div class="summary">
+                                    <%= itin.two_day %>
+                                </div>
+                            </div>
+
+                        <h4 class="ui left sub header">Day 3:</h4>
+                            <div class="content">
+                                <div class="summary">
+                                    <%= itin.three_day %>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+
+                <div class="extra content">
+                    <div class="right floated author">
+                        <img class="ui avatar image" src="https://i.imgur.com/TjI858b.jpg"> <%= itin.user.username %>
+                    </div>
+
+                    <div class="left floated date">
+                        <%= itin.created_at.to_date %>
+                    </div>
+                </div>
+            </a>
+        </div>
+    <% end %>
+    
+</div>
+
+
  

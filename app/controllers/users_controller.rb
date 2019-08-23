@@ -7,25 +7,35 @@ class UsersController < ApplicationController
 
     def new 
         @user = User.new
-        # @user.itineraries.build?
     end
 
     def create
         @user = User.new(user_params)
         if(@user.save)
-            redirect_to main_index_path
+            redirect_to home_path
         else
             render :new
         end
     end
 
     def edit
+        @user = User.find(params[:id])
     end
 
     def update
+        @user = User.find(params[:id])
+        if(@user.update(user_params))
+            redirect_to user_path(@user)
+        else
+            render :edit
+        end
     end
 
     def destroy
+        @user = User.find(params[:id])
+        User.destroy(@user.id)
+        # check README for the other stuff I have to do 
+        redirect_to home_path
     end
 
     def user_itineraries

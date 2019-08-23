@@ -1,65 +1,69 @@
+<h2 class="ui white header">Information</h2>
 
+<div class="ui centered grid container">
+    <div class="eight wide column">
+        <div class="ui segment">
+            <%= form_for(@user, html: {class: "ui form"}) do |f| %>
 
-<%= form_for(@user, html: {class: "ui form"}) do |f| %>
-
-    <h3 class="ui block header">Information</h3>
-
-        <div class="fields">
-            <div class="three wide field">
-                <%= f.label :first_name %>
-                    <div class="ui input focus">
-                        <%= f.text_field :first_name, placeholder: "Jon" %>
+                <div class="fields">
+                    <label>First Name:</label>
+                    <div class="three wide field">
+                        <div class="ui input focus">
+                            <%= f.text_field :first_name, placeholder: "Jon" %>
+                        </div>
                     </div>
-            </div>
 
-            <div class="two wide field">
-                <%= f.label :last_name %>
-                    <div class="ui input focus">
-                        <%= f.text_field :last_name, placeholder: "Boss" %>
+                    <label>Last Name:</label>
+                    <div class="three wide field">
+                        <div class="ui input focus">
+                            <%= f.text_field :last_name, placeholder: "Boss" %>
+                        </div>
                     </div>
-            </div>
 
-            <div class="two wide field">
-                <%= f.label :gender %>
-                    <div class="ui input focus">
-                        <%= f.select :gender, [['Male'],['Female']], prompt: true %>
+                    <label>Gender:</label>
+                    <div class="four wide field">
+                        <div class="ui input focus">
+                            <%= f.select :gender, [['Male'],['Female']], prompt: true %>
+                        </div>
                     </div>
-            </div>
-        </div>
-
-        <div class="fields">
-            <div class="three wide field">
-                <%= f.label :username %>
-                    <div class="ui input focus">
-                        <%= f.text_field :username, placeholder: "SKIZATL" %>
-                    </div>
-            </div>
-
-            <div class="two wide field">
-                <%= f.label :password %>
-                    <div class="ui input focus">
-                        <%= f.password_field :password, placeholder: "YNLdfnao78" %>
-                    </div>
-            </div>
-        </div>
-
-     
-        <div class="two wide field">
-            <%= f.label :location %>
-                <div class="ui input focus">
-                    <%= f.text_field :location, placeholder: "ATL, GA" %>
                 </div>
-        </div>
-    
 
+                <div class="fields">
+                    <label>Username:</label>
+                    <div class="three wide field">
+                        <div class="ui input focus">
+                            <%= f.text_field :username, placeholder: "SKIZATL" %>
+                        </div>
+                    </div>
 
-        <div class="field">
-            <%= f.label :bio %>
-                <div class="ui input focus">
-                    <%= f.text_area :bio, placeholder: "ski szn every szn" %>
+                    <label>Password:</label>
+                    <div class="four wide field">
+                        <div class="ui input focus">
+                            <%= f.text_field :password, placeholder: "YNLdfnao78" %>
+                        </div>
+                    </div>
                 </div>
+
+                    <label>Location:</label>
+                    <div class="three wide field">
+                            <div class="ui input focus">
+                                <%= f.text_field :location, placeholder: "ATL, GA" %>
+                            </div>
+                    </div>
+
+                    <label>Bio:</label>
+                    <div class="field">
+                            <div class="ui input focus">
+                                <%= f.text_area :bio, placeholder: "ski szn every szn" %>
+                            </div>
+                    </div>
+
+                <%= f.submit "Save", class: 'ui blue button' %>
+        
+            <% end %>
         </div>
+    </div>
+</div>
 
-    <%= f.submit "Save", class: 'ui blue button' %>
+                        
 
-<% end %>

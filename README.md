@@ -126,24 +126,16 @@ QUESTIONS
 * Itineraries --> custom route --> 
 * Account Button --> User show page
 
-Search Bar --> PostGres?
-- user will type in a city, state 
-- we will take input ... break it up into city and state
-- check the destinations table to see if the input matches any of the cities
-- if it does ... direct user to page of all itineraries associated with that city 
-- if it does not ... create a new destination with that input ... and then direct user to that same page
 
-Itinerary Show Page
-- reserved for when a User types in a city and the list of itineraries pops up with that city 
-- a User can then click on that itinerary and it will direct them to that itineraries show page 
 
 
 Stuff to Fix
-- new user page ... follow new itinerary page format
 - make buttons Home and Login dissappear only when someone goes to the login page
 
-- when someone makes a new user they are redirected to the main page with the welcome message
-
-
-      
-<%= f.collection_select(:destination_id, Destination.all, :id, :cities_for_state(:state), prompt: true) %>
+- how to display password ... how to edit password
+- when a user deletes their account, I have to log them out
+- CRUD ability for itineraries
+-Likes
+- background zoom in issue when user views his/her itineraries
+- validations
+- error messages

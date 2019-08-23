@@ -1,0 +1,66 @@
+<h2 class="ui white header">Edit User</h2>
+
+<div class="ui centered grid container">
+    <div class="eight wide column">
+        <div class="ui segment">
+            <%= form_for(@user, html: {class: "ui form"}) do |f| %>
+
+                <div class="fields">
+                    <label>First Name:</label>
+                    <div class="four wide field">
+                        <div class="ui input focus">
+                            <%= f.text_field :first_name %>
+                        </div>
+                    </div>
+
+                    <label>Last Name:</label>
+                    <div class="three wide field">
+                        <div class="ui input focus">
+                            <%= f.text_field :last_name %>
+                        </div>
+                    </div>
+
+                    <label>Gender:</label>
+                    <div class="three wide field">
+                        <div class="ui input focus">
+                            <%= f.select :gender, [['Male'],['Female']], prompt: true %>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fields">
+                    <label>Username:</label>
+                    <div class="three wide field">
+                        <div class="ui input focus">
+                            <%= f.text_field :username %>
+                        </div>
+                    </div>
+
+                    <label>Password:</label>
+                    <div class="four wide field">
+                        <div class="ui input focus">
+                            <%= f.text_field :password %>
+                        </div>
+                    </div>
+                </div>
+
+                    <label>Location:</label>
+                    <div class="three wide field">
+                            <div class="ui input focus">
+                                <%= f.text_field :location %>
+                            </div>
+                    </div>
+
+                    <label>Bio:</label>
+                    <div class="field">
+                            <div class="ui input focus">
+                                <%= f.text_area :bio %>
+                            </div>
+                    </div>
+
+                <%= f.submit "Update", class: 'ui blue button' %>
+        
+            <% end %>
+        </div>
+    </div>
+</div>
